@@ -1,10 +1,23 @@
 import React from 'react'
 import BodyLayout from '../../../components/BodyLayout'
+import ChatUserList from "./ChatUserList"
 
 function ChatPage() {
   return (
     <BodyLayout>
-      <div>ChatPage</div>
+      <div>
+        <ChatUserList />
+        <ChatUserList />
+        <ChatUserList />
+        <ChatUserList />
+        <ChatUserList />
+        <ChatUserList />
+        <ChatUserList />
+        <ChatUserList />
+        <ChatUserList />
+        <ChatUserList />
+
+      </div>
     </BodyLayout>
   )
 }
