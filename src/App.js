@@ -1,7 +1,4 @@
-import logo from './logo.svg';
 import './App.css';
-import InputWithIcon from './components/Common/InputField/InputField';
-import { TEXT_EMAIL } from './constants/TextConstants';
 import HomePage from './components/App/HomePage/HomePage';
 import { ThemeProvider } from '@mui/system';
 import { createTheme } from '@mui/material/styles';
