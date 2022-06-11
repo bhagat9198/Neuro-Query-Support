@@ -1,9 +1,14 @@
-import Button from '@mui/material/Button';
+import Button from "@mui/material/Button";
 
-export default function UIButton({ type, children }) {
+export default function UIButton({ type, children, onClick }) {
   return (
     <div>
-      <Button variant={type == "Primary" ? "contained" : "outlined"}>{children}</Button>
+      <Button
+        variant={type == "Primary" ? "contained" : "outlined"}
+        onClick={onClick}
+      >
+        {children}
+      </Button>
     </div>
-  )
+  );
 }

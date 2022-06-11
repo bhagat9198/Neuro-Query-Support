@@ -1,0 +1,25 @@
+.cardContainer{
+    border: 2px solid #dedede;
+    border-radius: 10px;
+    min-width: 50%;
+    min-height:50vh;
+    max-height:70vh ;
+    max-width:70%;
+    box-shadow: -1px 0px 25px 0px rgba(94,87,94,1);
+    margin: auto;
+    overflow-y: auto;
+    
+  
+}
+.innerDiv{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding-left:20%;
+   
+}
+.heading{
+    align-self: center;
+    margin-right: 20%;
+}
