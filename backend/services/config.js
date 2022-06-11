@@ -1,10 +1,10 @@
 let config = {}
 
-if(process.env.NODE_ENV === 'development') {
+if(process.env.NODE_ENV === 'dev') {
   config.ssl = false;
 }
 
-if(process.env.NODE_ENV === 'production') {
+if(process.env.NODE_ENV === 'prod') {
   config.ssl = false;
 }
 

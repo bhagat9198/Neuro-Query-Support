@@ -152,11 +152,7 @@ function BodyLayout(props) {
         )}
         <Box
           component="main"
-          sx={{
-            flexGrow: 1,
-            p: 3,
-            width: { sm: `calc(100% - ${drawerWidth}px)` },
-          }}
+          sx={{ flexGrow: 1, p: 3, width: { sm: `calc(100% - ${drawerWidth}px)` }, padding: "0px" }}
         >
           <Toolbar />
           <Box sx={{ flexGrow: 1, height: "100%" }}>{children}</Box>

@@ -12,16 +12,28 @@ import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "./assets/css/global.css";
 
-import Signin from "./views/auth/Signin";
+import { ThemeProvider } from "@mui/system";
+import { createTheme } from "@mui/material/styles";
+import { green, purple } from "@mui/material/colors";
+import {
+  BrowserRouter,
+  Route,
+  Routes,
+  useLocation,
+  useParams,
+} from "react-router-dom";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import "./assets/css/global.css";
+import "./assets/css/loader.css";
+
+import Auth from "./views/auth/Auth";
 import { Suspense, useEffect, useState } from "react";
 import Error from "./views/Error";
 import HomeMentor from "./views/mentor/Home";
-import QueryPage from "./views/student/QueryPage/QueryPage";
-const loading = (
-  <div className="pt-3 text-center">
-    <div className="sk-spinner sk-spinner-pulse"></div>
-  </div>
-);
+import { socket } from "./socket";
+
+const loading = <div className="wobbling"></div>;
 
 const theme = createTheme({
   palette: {
@@ -109,6 +121,11 @@ function App() {
     // if (!uType.isAdmin && !uType.isMentor && !uType.isStudent) {
 
     // }
+
+    // SOCKET
+    socket.on("connection", async (data) => {
+      console.log("App :: connection :: data :: ", data);
+    });
   }, []);
 
   console.log("App :: userType ::", userType);
@@ -133,9 +150,7 @@ function App() {
       <ThemeProvider theme={theme}>
         <Suspense fallback={loading}>
           <Routes>
-            <Route exact path="/signin" element={<Signin />} />
-            <Route exact path="/signup" element={<Signin />} />
-            <Route path="/query" element={<QueryPage />} />
+            <Route exact path="/auth" element={<Auth />} />
             <Route
               exact
               path="/mentor"

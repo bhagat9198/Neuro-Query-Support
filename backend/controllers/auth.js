@@ -6,7 +6,6 @@ const jwt = require('jsonwebtoken');
 const studentModal = require('./../modals/student');
 const mentorModal = require('./../modals/mentor');
 const { userDetailsByEmail } = require("../services/utils");
-const { log } = require("async");
 
 const bycryptSaltRounds = Number(process.env.BYCRYPT_SALT_ROUNDS);
 const bycryptSalt = process.env.BYCRYPT_SALT;
@@ -48,7 +47,7 @@ exports.fileFilter = () => {
 
 ///////////////////////////////////////////////
 
-exports.postSignup = (req, res, next) => {
+exports.postSignup = async(req, res, next) => {
 
   const name = req.body.name;
   const email = req.body.email;
@@ -140,7 +139,7 @@ exports.postSignup = (req, res, next) => {
   }
 }
 
-exports.postSignin = (req, res, next) => {
+exports.postSignin = async(req, res, next) => {
   const email = req.user.email;
   const password = req.body.password;
   const userType = req.body.userType;
@@ -186,7 +185,7 @@ exports.postSignin = (req, res, next) => {
   }
 }
 
-exports.postPasswordReset = (req, res, next) => {
+exports.postPasswordReset = async(req, res, next) => {
   const oldPassword = req.body.oldPassword;
   const newPassword = req.body.newPassword;
 
@@ -197,7 +196,7 @@ exports.postPasswordReset = (req, res, next) => {
 }
 
 
-exports.postgenerateToken = (req, res, next) => {
+exports.postgenerateToken = async(req, res, next) => {
   const userType = req.body.userType;
   const email = req.body.email;
   const _id = req.body._id;
@@ -223,7 +222,7 @@ exports.postgenerateToken = (req, res, next) => {
   
 }
 
-exports.patchUserDetails = (req, res, next) => {
+exports.patchUserDetails = async(req, res, next) => {
   const _id = req.body._id;
   const userType = req.body.userType;
   const lastActiveAt = req.body.lastActiveAt;
