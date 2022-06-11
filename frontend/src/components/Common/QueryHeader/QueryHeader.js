@@ -5,10 +5,11 @@ import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutline";
 function QueryHeader() {
   return (
     <div className={styles.headerContainer}>
-      <div>
+      <div className={styles.row}>
+        <p className={styles.headerText}>All Tickets</p>
         <UIButton>
           <AddCircleOutlineIcon />
-          <span>Add Query</span>
+          <span className={styles.btnText}>Add Query</span>
         </UIButton>
       </div>
     </div>

@@ -20,7 +20,13 @@ function QueryPage() {
           <QueryCardItem />
         </div>
         <div className={styles.QueryDetails}>
-          <QuerySummary />
+          <QuerySummary
+            title=""
+            description=""
+            createdAt=""
+            assignedTo=""
+            status=""
+          />
         </div>
       </div>
     </BodyLayout>

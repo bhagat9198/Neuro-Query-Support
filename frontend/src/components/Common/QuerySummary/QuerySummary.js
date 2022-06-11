@@ -7,10 +7,10 @@ function QuerySummary(props) {
     <div className={styles.wrapper}>
       <div className={styles.titleSection}>
         <div>
-          <span className={styles.recent}>Recent queries</span>
+          <span className={styles.recent}>Summary</span>
         </div>
         <div className={styles.titleDetails}>
-          <p className={styles.titleText}>{"QUERY TITLE"}</p>
+          <p className={styles.titleText}>{props?.title || "QUERY TITLE"}</p>
           <div
             className={`${
               props.status === "open"
@@ -18,7 +18,7 @@ function QuerySummary(props) {
                 : styles.statusContainerOpen
             }`}
           >
-            {"Closed"}
+            {props?.status || "Closed"}
           </div>
         </div>
       </div>
@@ -37,6 +37,7 @@ function QuerySummary(props) {
         <div className={styles.description}>
           <p className={styles.lightText}>Description:</p>
           <p style={{ margin: 0, marginBottom: "2rem" }}>
+            {props.description}
             Lorem Ipsum is simply dummy text of the printing and typesetting
             industry. Lorem Ipsum has been the industry's standard dummy text
             ever since the 1500s, when an unknown printer took a galley of type
@@ -45,16 +46,7 @@ function QuerySummary(props) {
             remaining essentially unchanged. It was popularised in the 1960s
             with the release of Letraset sheets containing Lorem Ipsum passages,
             and more recently with desktop publishing software like Aldus
-            PageMaker including versions of Lorem Ipsum. Lorem Ipsum is simply
-            dummy text of the printing and typesetting industry. Lorem Ipsum has
-            been the industry's standard dummy text ever since the 1500s, when
-            an unknown printer took a galley of type and scrambled it to make a
-            type specimen book. It has survived not only five centuries, but
-            also the leap into electronic typesetting, remaining essentially
-            unchanged. It was popularised in the 1960s with the release of
-            Letraset sheets containing Lorem Ipsum passages, and more recently
-            with desktop publishing software like Aldus PageMaker including
-            versions of Lorem Ipsum.
+            PageMaker including versions of Lorem Ipsum.
           </p>
         </div>
         <UIButton variant="primary">Go To Query</UIButton>
