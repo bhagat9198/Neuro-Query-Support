@@ -72,6 +72,14 @@ const getUrlConfig = ({ tokenName }) => {
 //   const date = new Date(timestamp);
 //   return format(date, 'dd-MMM-yyyy')
 // }
+const getMaxText = (text, length) => {
+  if (text.length > length) {
+    return (text.substring(0, length)+"...")
+  } else {
+    return text
+  }
+  
+}
 
 module.exports.BASE_URL = BASE_URL;
 module.exports.darkColors = darkColors;
@@ -79,4 +87,6 @@ module.exports.lightColors = lightColors;
 module.exports.colorCombinations = colorCombinations;
 module.exports.imgObjectUrl = imgObjectUrl;
 module.exports.getUrlConfig = getUrlConfig;
+module.exports.getMaxText = getMaxText
 // module.exports.getDate = getDate;
+

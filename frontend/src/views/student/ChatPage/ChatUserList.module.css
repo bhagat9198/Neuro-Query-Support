@@ -6,7 +6,9 @@
   margin: 0 15px;
 }
 .mainwrapper {
-  width: 36%;
+  /* width: 36%; */
+  /* width: fit-content; */
+  max-width: -webkit-fill-available;
 }
 
 .mainwrapper:hover{
@@ -17,10 +19,16 @@
   display: flex;
   padding: 10px 0;
   border-bottom: 1px solid #c9c4c4;
+  width: 100%;
+}
+
+.avatarContainer {
+  width: 80px;
 }
 
 .textWrapper {
   align-self: center;
+  width: inherit;
 }
 .name {
   font-weight: 600;
@@ -50,4 +58,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.timeNotificationWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 30px;
+  margin-right: 5px;
 }
