@@ -30,17 +30,19 @@ function HomePage() {
     },
   ];
   return (
-    <div className={HomePageStyles.homepageContainer}>
-      <div className={HomePageStyles.inputContainer}>
-        <UICard>
-          <UITabs tabs={tabValues} />
-        </UICard>
-      </div>
-      <div className={HomePageStyles.imageContainer}>
-        <img
-          className={HomePageStyles.image}
-          src="/images/homepage_image.jpg"
-        />
+    <div>
+      <div className={HomePageStyles.homepageContainer}>
+        <div className={HomePageStyles.inputContainer}>
+          <UICard>
+            <UITabs tabs={tabValues} />
+          </UICard>
+        </div>
+        <div className={HomePageStyles.imageContainer}>
+          <img
+            className={HomePageStyles.image}
+            src="/images/homepage_image.jpg"
+          />
+        </div>
       </div>
       <SideBar />
     </div>
