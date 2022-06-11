@@ -802,8 +802,8 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start-dev": "cross-env=development nodemon app.js",
-    "start": "cross-env=production node app.js"
+    "start-dev": "cross-env=development && nodemon app.js",
+    "start": "cross-env=production && node app.js"
   },
   "repository": {
     "type": "git",

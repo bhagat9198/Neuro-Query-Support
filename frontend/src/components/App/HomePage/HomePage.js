@@ -1,4 +1,4 @@
-import { Stack } from "@mui/material";
+import { Box, Stack } from "@mui/material";
 import React, { useState } from "react";
 import SideBar from "../../Common/SideBar/SideBar";
 import {
@@ -30,7 +30,11 @@ function HomePage() {
     },
   ];
   return (
-    <div>
+    <Box style={{
+      display: 'flex',
+      flexGrow: 1,
+      alignItems: 'center'
+    }} >
       <div className={HomePageStyles.homepageContainer}>
         <div className={HomePageStyles.inputContainer}>
           <UICard>
@@ -45,7 +49,7 @@ function HomePage() {
         </div>
       </div>
       <SideBar />
-    </div>
+    </Box>
   );
 }
 
