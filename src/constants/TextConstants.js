@@ -1,1 +1,0 @@
-export const TEXT_EMAIL = "Email"
