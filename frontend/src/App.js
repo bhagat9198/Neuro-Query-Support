@@ -1,16 +1,3 @@
-import { ThemeProvider } from "@mui/system";
-import { createTheme } from "@mui/material/styles";
-import { green, purple } from "@mui/material/colors";
-import {
-  BrowserRouter,
-  Route,
-  Routes,
-  useLocation,
-  useParams,
-} from "react-router-dom";
-import { toast, ToastContainer } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
-import "./assets/css/global.css";
 
 import { ThemeProvider } from "@mui/system";
 import { createTheme } from "@mui/material/styles";
@@ -32,6 +19,8 @@ import { Suspense, useEffect, useState } from "react";
 import Error from "./views/Error";
 import HomeMentor from "./views/mentor/Home";
 import { socket } from "./socket";
+import QueryPage from "./views/student/QueryPage/QueryPage";
+import ChatPage from "./views/student/ChatPage/ChatPage";
 
 const loading = <div className="wobbling"></div>;
 
@@ -155,6 +144,16 @@ function App() {
               exact
               path="/mentor"
               element={<HomeMentor userType={userType} />}
+            />
+            <Route
+              exact
+              path="/query"
+              element={<QueryPage />}
+            />
+            <Route
+              exact
+              path="/query/chat"
+              element={<ChatPage />}
             />
             <Route
               exact
