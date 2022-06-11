@@ -2,12 +2,15 @@ const darkColors = ['#242582', '#F64C72', '#553D67', '#8D8741', '#05386B', '#379
 const lightColors = ['#85DCB', '#E8A87C', '#FBEEC1', '#DAAD86', '#EDF5E1', '#8EE4AF', '#CAFAFE', '#97CAEF', '#B1A296', '#C2CAD0', '#C2B9B0', '#AFD275', '#E7717D', '#66FCF1', '#C5C6C7', '#E3AFBC', '#E3E2DF', '#EE4C7C', '#E3E2DF', '#EFE2BA', '#C5CBE3', '#D79922'];
 const mixedColors = ['red', 'plum', 'orange', 'olive', 'green', 'purple', 'brown', 'gold', 'violet', 'indigo']
 
-let BASE_URL = '';
+let SERVER_BASE_URL = '';
+let SOCKET_URL = '';
 
 if (process.env.NODE_ENV === 'development') {
-  BASE_URL = 'http://localhost:7001'
+  SERVER_BASE_URL = 'http://localhost:7001'
+  SOCKET_URL = 'http://localhost:9000'
 } else {
-  BASE_URL = ''
+  SERVER_BASE_URL = ''
+  SOCKET_URL = ''
 }
 
 const colorCombinations = [
@@ -73,7 +76,8 @@ const getUrlConfig = ({ tokenName }) => {
 //   return format(date, 'dd-MMM-yyyy')
 // }
 
-module.exports.BASE_URL = BASE_URL;
+module.exports.SERVER_BASE_URL = SERVER_BASE_URL;
+module.exports.SOCKET_URL = SOCKET_URL;
 module.exports.darkColors = darkColors;
 module.exports.lightColors = lightColors;
 module.exports.colorCombinations = colorCombinations;

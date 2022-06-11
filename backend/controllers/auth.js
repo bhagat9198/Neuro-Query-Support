@@ -2,6 +2,8 @@
 
 const bcrypt = require("bcrypt");
 const jwt = require('jsonwebtoken');
+const multer = require('multer');
+const uniqid = require('uniqid');
 
 const studentModal = require('./../modals/student');
 const mentorModal = require('./../modals/mentor');
@@ -19,7 +21,7 @@ let fileNameOriginal = '';
 
 ///////////////////////////////////////////////
 
-exports.fileStorage = ({ fileStoragePath, filenamePrefix }) => {
+const fileStorage = ({ fileStoragePath, filenamePrefix }) => {
   return multer.diskStorage({
     destination: function (req, file, cb) {
       filePath = fileStoragePath;
@@ -33,7 +35,7 @@ exports.fileStorage = ({ fileStoragePath, filenamePrefix }) => {
   });
 }
 
-exports.fileFilter = () => {
+const fileFilter = () => {
   return (req, file, cb) => {
     // if(file.mimetype === 'application/pdf') 
     // {
@@ -46,6 +48,11 @@ exports.fileFilter = () => {
 }
 
 ///////////////////////////////////////////////
+
+exports.userImg = multer({
+  storage: fileStorage({ fileStoragePath: `images/users`, filenamePrefix: `b_${uniqid()}` }),
+  fileFilter: fileFilter()
+}).single('photo');
 
 exports.postSignup = async(req, res, next) => {
 

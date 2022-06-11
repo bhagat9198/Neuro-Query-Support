@@ -1,7 +1,7 @@
 import io from "socket.io-client";
-import { BASE_URL } from "./util";
+import { SOCKET_URL } from "./util";
  
-export const socket = io(BASE_URL, {
+export const socket = io(SOCKET_URL, {
   reconnectionDelay: 1000,
   reconnection: true,
   reconnectionAttempts: Infinity,

@@ -4,7 +4,6 @@ const TicketSchema = new mongoose.Schema({
   query: String,
   repoter_id: String,
   repoter_name: String,
-  repoter_name: String,
   assigne_name: String,
   assigne_id: String,
   category: String,
