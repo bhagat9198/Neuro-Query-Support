@@ -1,10 +1,11 @@
 import React from 'react'
 import BodyLayout from '../../../components/BodyLayout'
+import ChatBox from './ChatBox'
 
 function ChatPage() {
   return (
     <BodyLayout>
-      <div>ChatPage</div>
+      <ChatBox />
     </BodyLayout>
   )
 }
