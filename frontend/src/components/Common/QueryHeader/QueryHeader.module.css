@@ -7,4 +7,20 @@
     padding: 16px 20px;
     border-top: 1.5px solid #dedede;
     justify-content: center;
+    align-items: center;
 }
+.row{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+.headerText{
+    font-size:1.5rem;
+    font-weight: bold;
+    }
+    .btnText{
+        margin-left:7px;
+
+    }

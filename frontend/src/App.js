@@ -1,4 +1,3 @@
-
 import { ThemeProvider } from "@mui/system";
 import { createTheme } from "@mui/material/styles";
 import { green, purple } from "@mui/material/colors";
@@ -145,16 +144,9 @@ function App() {
               path="/mentor"
               element={<HomeMentor userType={userType} />}
             />
-            <Route
-              exact
-              path="/query"
-              element={<QueryPage />}
-            />
-            <Route
-              exact
-              path="/query/chat"
-              element={<ChatPage />}
-            />
+            <Route exact path="/query" element={<QueryPage />} />
+            <Route exact path="/query" element={<QueryPage />} />
+            <Route exact path="/query/chat" element={<ChatPage />} />
             <Route
               exact
               path="/404"
