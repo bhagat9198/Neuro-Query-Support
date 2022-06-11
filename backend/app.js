@@ -30,27 +30,25 @@ app.use(commonRoutes);
 // app.use('/', authRoutes);
 
 const MONGODB_URI = process.env.MONGODB_URI;
-const PORT = process.env.PORT || 7000;
+const PORT = process.env.PORT || 7001;
 let httpServer, httpsServer;
 
 if (!config.ssl) {
   httpServer = http.Server(app);
   httpServer.listen(PORT, function () {
-    log.write("Server started at " + port + " port ...!!!!!!!!!!");
+    console.log("Server started at " + PORT );
     socketServer.connect(httpServer)
   })
 } else {
   httpsServer = https.Server(app);
   httpsServer.listen(PORT, function () {
-    log.write("Server started at " + port + " port ...!!!!!!!!!!");
+    console.log("Server started at " + port );
     socketServer.connect(httpsServer)
   })
 }
 
 
-mongoose.connect(MONGODB_URI).then(async () => {
-  return app.listen(PORT)
-}).then(() => {
+mongoose.connect(MONGODB_URI).then(() => {
   console.log('Connected at PORT :: ', PORT);
 }).catch(error => {
   console.log(error);

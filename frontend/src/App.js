@@ -11,6 +11,8 @@ import Signin from './views/auth/Signin';
 import { Suspense, useEffect, useState } from 'react';
 import Error from './views/Error';
 import HomeMentor from './views/mentor/Home';
+import { socket } from './socket';
+
 const loading = (
   <div className="pt-3 text-center">
     <div className="sk-spinner sk-spinner-pulse"></div>
@@ -104,6 +106,12 @@ function App() {
     // if (!uType.isAdmin && !uType.isMentor && !uType.isStudent) {
       
     // }
+
+    // SOCKET
+    socket.on('connection', async(data) => {
+      console.log('App :: connection :: data :: ', data);
+    })
+
   }, [])
 
   console.log('App :: userType ::', userType);

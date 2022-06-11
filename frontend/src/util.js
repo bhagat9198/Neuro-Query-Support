@@ -2,6 +2,14 @@ const darkColors = ['#242582', '#F64C72', '#553D67', '#8D8741', '#05386B', '#379
 const lightColors = ['#85DCB', '#E8A87C', '#FBEEC1', '#DAAD86', '#EDF5E1', '#8EE4AF', '#CAFAFE', '#97CAEF', '#B1A296', '#C2CAD0', '#C2B9B0', '#AFD275', '#E7717D', '#66FCF1', '#C5C6C7', '#E3AFBC', '#E3E2DF', '#EE4C7C', '#E3E2DF', '#EFE2BA', '#C5CBE3', '#D79922'];
 const mixedColors = ['red', 'plum', 'orange', 'olive', 'green', 'purple', 'brown', 'gold', 'violet', 'indigo']
 
+let BASE_URL = '';
+
+if (process.env.NODE_ENV === 'development') {
+  BASE_URL = 'http://localhost:7001'
+} else {
+  BASE_URL = ''
+}
+
 const colorCombinations = [
   { c1: '#949398FF', c2: '#F4DF4EFF' },
   { c1: '#FC766AFF', c2: '#FC766AFF' },
@@ -65,6 +73,7 @@ const getUrlConfig = ({ tokenName }) => {
 //   return format(date, 'dd-MMM-yyyy')
 // }
 
+module.exports.BASE_URL = BASE_URL;
 module.exports.darkColors = darkColors;
 module.exports.lightColors = lightColors;
 module.exports.colorCombinations = colorCombinations;
