@@ -30,6 +30,13 @@
   justify-content: space-evenly;
 }
 
+.signUp {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin-top: 10px;
+}
+
 .textfieldContainer {
   display: flex;
   flex-direction: column;
