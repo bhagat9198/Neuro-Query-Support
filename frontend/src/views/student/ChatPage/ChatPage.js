@@ -1,11 +1,23 @@
 import React from 'react'
 import BodyLayout from '../../../components/BodyLayout'
-import ChatBox from './ChatBox'
+import ChatUserList from "./ChatUserList"
 
 function ChatPage() {
   return (
     <BodyLayout>
-      <ChatBox />
+      <div>
+        <ChatUserList />
+        <ChatUserList />
+        <ChatUserList />
+        <ChatUserList />
+        <ChatUserList />
+        <ChatUserList />
+        <ChatUserList />
+        <ChatUserList />
+        <ChatUserList />
+        <ChatUserList />
+
+      </div>
     </BodyLayout>
   )
 }
