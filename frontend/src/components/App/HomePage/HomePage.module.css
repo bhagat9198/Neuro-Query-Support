@@ -1,0 +1,36 @@
+.homepageContainer {
+  display: flex;
+  flex-direction: row;
+}
+
+.inputContainer {
+  width: 45%;
+  padding: 80px;
+  margin-left: 64px;
+}
+
+.imageContainer {
+  width: 55%;
+  display: flex;
+  justify-content: end;
+}
+
+.image {
+  height: 100vh;
+  position: fixed;
+}
+
+.formContainer {
+  padding: 0 40px;
+}
+
+.buttonContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.textfieldContainer {
+  display: flex;
+  flex-direction: column;
+}
