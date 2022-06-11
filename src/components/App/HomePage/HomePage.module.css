@@ -1,9 +1,24 @@
 .homepageContainer {
-  width: 50vw;
+  display: flex;
+  flex-direction: row;
+}
+
+.inputContainer {
+  width: 40%;
+  padding: 80px;
+}
+
+.imageContainer {
+  width: 60%;
+}
+
+.image {
+  height: 100vh;
+  position: fixed;
 }
 
 .formContainer {
-  padding: 20px 40px;
+  padding: 0 40px;
 }
 
 .buttonContainer {

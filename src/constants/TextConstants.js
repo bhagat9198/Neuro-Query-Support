@@ -1,2 +1,6 @@
 export const TEXT_EMAIL = "Email"
+export const TEXT_NAME = "Name"
+export const TEXT_AGE = "Age"
+export const TEXT_EDUCATION = "Education"
+export const TEXT_UPLOAD_IMAGE = "Profile Picture"
 export const TEXT_PASSWORD = "Password"
