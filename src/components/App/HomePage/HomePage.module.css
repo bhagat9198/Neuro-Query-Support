@@ -1,0 +1,18 @@
+.homepageContainer {
+  width: 50vw;
+}
+
+.formContainer {
+  padding: 20px 40px;
+}
+
+.buttonContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.textfieldContainer {
+  display: flex;
+  flex-direction: column;
+}

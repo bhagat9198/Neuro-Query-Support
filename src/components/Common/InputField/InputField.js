@@ -5,25 +5,32 @@ import InputLabel from '@mui/material/InputLabel';
 import InputAdornment from '@mui/material/InputAdornment';
 import FormControl from '@mui/material/FormControl';
 import AccountCircle from '@mui/icons-material/AccountCircle';
+import LockIcon from '@mui/icons-material/Lock';
 
-export default function InputWithIcon({ label, onChange, value }) {
+import InputFieldStyle from './InputField.module.css'
+
+export default function InputField({ label, onChange, value, icon, type }) {
   return (
-    <Box sx={{ '& > :not(style)': { m: 1 } }}>
-      <FormControl variant="standard">
+    <div className={InputFieldStyle.inputFieldContainer}>
+      <FormControl variant="standard" className={InputFieldStyle.inputField}>
         <InputLabel htmlFor="input-with-icon-adornment">
           {label}
         </InputLabel>
         <Input
-        value={value}
-        onChange={onChange}
+          type={type}
+          value={value}
+          onChange={onChange}
           id="input-with-icon-adornment"
           startAdornment={
-            <InputAdornment position="start">
-              <AccountCircle />
-            </InputAdornment>
+            icon && (
+              <InputAdornment position="start">
+                {icon == 'Account' && <AccountCircle color='primary' />}
+                {icon == 'Password' && <LockIcon color='primary' />}
+              </InputAdornment>
+            )
           }
         />
       </FormControl>
-    </Box>
+    </div>
   );
 }
