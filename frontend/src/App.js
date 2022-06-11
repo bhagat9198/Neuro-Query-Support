@@ -8,7 +8,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import './assets/css/global.css';
 import './assets/css/loader.css';
 
-import Signin from './views/auth/Signin';
+import Auth from './views/auth/Auth';
 import { Suspense, useEffect, useState } from 'react';
 import Error from './views/Error';
 import HomeMentor from './views/mentor/Home';
@@ -135,8 +135,7 @@ function App() {
       <ThemeProvider theme={theme}>
         <Suspense fallback={loading} >
             <Routes  >
-              <Route exact path='/signin' element={<Signin />} />
-              <Route exact path='/signup' element={<Signin />} />
+              <Route exact path='/auth' element={<Auth />} />
               <Route exact path='/mentor' element={<HomeMentor userType={userType} />} />
               <Route exact path='/404' element={<Error errorCode="404" goBackBtn={true} />} />
               <Route exact path='/500' element={<Error errorCode="500" goBackBtn={true} />} />

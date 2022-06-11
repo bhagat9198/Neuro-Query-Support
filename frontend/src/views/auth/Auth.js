@@ -12,14 +12,14 @@ import {
 // import InputField from "../components/Common/InputField/InputField";
 import UISelect from "../../components/Common/Select/UISelect";
 import UITabs from "../../components/Common/Tabs/UITabs";
-import SigninSytle from "./Signin.module.css";
+import SigninSytle from "./Auth.module.css";
 import SideBar from '../../components/Common/SideBar/SideBar';
 import UIButton from '../../components/Common/Buttons/UIButton';
 import UICard from '../../components/Common/Card/UICard';
 import UIImageSelector from '../../components/Common/ImageSelector/UIImageSelector';
 import InputField from '../../components/Common/InputField/InputField';
-
-export default function Signin(props) {
+import {useDispatch, useSelector} from 'react-redux'
+export default function Auth(props) {
   const tabValues = [
     {
       label: "Sign In",
@@ -31,13 +31,7 @@ export default function Signin(props) {
     },
   ];
   return (
-    // 
-      // <Box style={{
-      //   display: 'flex',
-      //   flexGrow: 1,
-      //   alignItems: 'center'
-      // }} >
-      <>
+    <>
       <BodyLayout hideDrawer={true}>
         <div className={SigninSytle.homepageContainer}>
           <div className={SigninSytle.inputContainer}>
@@ -49,13 +43,13 @@ export default function Signin(props) {
             <img
               className={SigninSytle.image}
               src="/images/homepage_image.jpg"
+              alt='pic'
             />
           </div>
         </div>
-        </BodyLayout>
-        </>
-      // </Box>
-    
+      </BodyLayout>
+    </>
+
   )
 }
 
@@ -63,6 +57,9 @@ export default function Signin(props) {
 const RenderLoginform = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
+
+
   return (
     <div className={SigninSytle.formContainer}>
       <div className={SigninSytle.textfieldContainer}>
@@ -94,13 +91,20 @@ const RenderSignUpform = () => {
   const [name, setName] = useState("");
   const [age, setAge] = useState("");
   const [image, setImage] = useState("");
+  const dispatch = useDispatch();
+  
   const education_data = [
     { label: "Junior School", value: "junior_school" },
     { label: "Senior School", value: "senior_school" },
     { label: "Under Graduate", value: "under_graduate" },
     { label: "Post Graduate", value: "post_graduate" },
   ];
-  console.log(image);
+
+  const submitHandler = e => {
+    
+  }
+
+
   return (
     <div className={SigninSytle.formContainer}>
       <div className={SigninSytle.textfieldContainer}>
@@ -142,7 +146,7 @@ const RenderSignUpform = () => {
           value={education}
           setValue={setEducation}
         />
-        
+
       </div>
       <div className={SigninSytle.buttonContainer}>
         <UIButton type="Secondary">Sign Up</UIButton>

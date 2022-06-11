@@ -12,7 +12,7 @@ function UIImageSelector({ label, value, setValue, onChange }) {
           </label>
         </div> : <div className={UIImageSelectorStyle.previewImageContainer}>
           <label for="file-upload">
-            <img src={URL.createObjectURL(value[0])} className={UIImageSelectorStyle.imageDisplay} />
+            <img src={URL.createObjectURL(value[0])} className={UIImageSelectorStyle.imageDisplay} alt="pic" />
             <input id="file-upload" name="file-upload" type="file" accept="image/x-png,image/gif,image/jpeg" className={UIImageSelectorStyle.label} onChange={onChange} />
           </label>
         </div>
