@@ -15,7 +15,7 @@ export default function Footer(props) {
 
   return (
     <Box sx={{
-      background: '#1976d2', color: 'white', display: 'flex', alignItems: 'center', p: 2, justifyContent: 'space-between',
+      background: '#1976d2', color: 'white', display: 'flex', alignItems: 'center', p: 2, justifyContent: 'space-between', zIndex: 2
 
     }} >
       <Box sx={{
