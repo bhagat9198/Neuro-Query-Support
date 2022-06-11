@@ -19,6 +19,7 @@ import Error from "./views/Error";
 import HomeMentor from "./views/mentor/Home";
 import { socket } from "./socket";
 import QueryPage from "./views/student/QueryPage/QueryPage";
+import ChatPage from "./views/student/ChatPage/ChatPage";
 
 const loading = <div className="wobbling"></div>;
 
@@ -144,6 +145,8 @@ function App() {
               element={<HomeMentor userType={userType} />}
             />
             <Route exact path="/query" element={<QueryPage />} />
+            <Route exact path="/query" element={<QueryPage />} />
+            <Route exact path="/query/chat" element={<ChatPage />} />
             <Route
               exact
               path="/404"
