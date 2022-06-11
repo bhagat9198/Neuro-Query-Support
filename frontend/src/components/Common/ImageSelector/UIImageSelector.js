@@ -3,10 +3,7 @@ import UIImageSelectorStyle from './UIImageSelector.module.css'
 
 function UIImageSelector({ label, value, setValue, onChange }) {
   return (
-    <>
-      <label className={UIImageSelectorStyle.labelTag}>
-        {label}
-      </label>
+    <div>
       {!value[0] ?
         <div className={UIImageSelectorStyle.container}>
           <label for="file-upload">
@@ -20,7 +17,7 @@ function UIImageSelector({ label, value, setValue, onChange }) {
           </label>
         </div>
       }
-    </>
+    </div>
   )
 }
 

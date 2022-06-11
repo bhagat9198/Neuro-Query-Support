@@ -6,6 +6,7 @@ import { BrowserRouter, Route, Routes, useLocation, useParams } from 'react-rout
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import './assets/css/global.css';
+import './assets/css/loader.css';
 
 import Signin from './views/auth/Signin';
 import { Suspense, useEffect, useState } from 'react';
@@ -14,9 +15,7 @@ import HomeMentor from './views/mentor/Home';
 import { socket } from './socket';
 
 const loading = (
-  <div className="pt-3 text-center">
-    <div className="sk-spinner sk-spinner-pulse"></div>
-  </div>
+  <div className="wobbling"></div>
 )
 
 const theme = createTheme({
