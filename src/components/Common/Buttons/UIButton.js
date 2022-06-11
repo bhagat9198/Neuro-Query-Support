@@ -5,5 +5,5 @@ export default function UIButton({ type, children }) {
     <div>
       <Button variant={type == "Primary" ? "contained" : "outlined"}>{children}</Button>
     </div>
-  );
+  )
 }

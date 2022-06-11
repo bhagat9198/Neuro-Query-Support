@@ -1,6 +1,7 @@
 import { Stack } from '@mui/material'
 import React, { useState } from 'react'
 import { TEXT_EMAIL, TEXT_PASSWORD } from '../../../constants/TextConstants'
+import SearchAppBar from '../../Common/AppBar/AppBar'
 import UIButton from '../../Common/Buttons/UIButton'
 import UICard from '../../Common/Card/UICard'
 import InputField from '../../Common/InputField/InputField'
@@ -12,7 +13,12 @@ function HomePage() {
 
   const renderForm = () => {
     return (
+      <>
+      <SearchAppBar/>
+      
+      
       <div className={HomePageStyles.homepageContainer}>
+     
         <UICard>
           <div className={HomePageStyles.formContainer}>
             <div className={HomePageStyles.textfieldContainer}>
@@ -25,6 +31,7 @@ function HomePage() {
             </div>
           </div>
         </UICard></div>
+        </>
     )
   }
   return (
