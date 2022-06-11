@@ -80,4 +80,4 @@ const RenderSignUpform = () => {
   )
 }
 
-export default HomePage
+export default HomePage;
