@@ -18,7 +18,8 @@ import UIButton from '../../components/Common/Buttons/UIButton';
 import UICard from '../../components/Common/Card/UICard';
 import UIImageSelector from '../../components/Common/ImageSelector/UIImageSelector';
 import InputField from '../../components/Common/InputField/InputField';
-import {useDispatch, useSelector} from 'react-redux'
+import UIRadioButton from '../../components/Common/UIRadioButton/UIRadioButton';
+// import {useDispatch, useSelector} from 'react-redux'
 export default function Auth(props) {
   const tabValues = [
     {
@@ -87,11 +88,14 @@ const RenderLoginform = () => {
 const RenderSignUpform = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
   const [education, setEducation] = useState("");
   const [name, setName] = useState("");
   const [age, setAge] = useState("");
   const [image, setImage] = useState("");
-  const dispatch = useDispatch();
+  const [gender, setGender] = useState("");
+  const [role, setRole] = useState("");
+  // const dispatch = useDispatch();
   
   const education_data = [
     { label: "Junior School", value: "junior_school" },
@@ -99,6 +103,29 @@ const RenderSignUpform = () => {
     { label: "Under Graduate", value: "under_graduate" },
     { label: "Post Graduate", value: "post_graduate" },
   ];
+
+  const gender_data = [
+    {
+      name: "Male",
+      value: "male"
+    }, {
+      name: "Female",
+      value: "female"
+    }, {
+      name: "Others",
+      value: "Others"
+    }
+  ]
+
+  const role_data = [
+    {
+      name: "Student",
+      value: "student"
+    }, {
+      name: "Mentor",
+      value: "mentor"
+    }
+  ]
 
   const submitHandler = e => {
     
@@ -134,6 +161,13 @@ const RenderSignUpform = () => {
           type="Password"
         />
         <InputField
+          label={'Confirm Password'}
+          value={confirmPassword}
+          onChange={(e) => setConfirmPassword(e.target.value)}
+          icon="Password"
+          type="Password"
+        />
+        <InputField
           label={TEXT_AGE}
           value={age}
           onChange={(e) => setAge(e.target.value)}
@@ -146,10 +180,11 @@ const RenderSignUpform = () => {
           value={education}
           setValue={setEducation}
         />
-
+        <UIRadioButton options={gender_data} label={"Gender"} onChange={(e) => setGender(e.target.value)} />
+        <UIRadioButton options={role_data} label={"Role"} onChange={(e) => setRole(e.target.value)} />
       </div>
-      <div className={SigninSytle.buttonContainer}>
-        <UIButton type="Secondary">Sign Up</UIButton>
+      <div className={SigninSytle.signUp}>
+        <UIButton type="Primary">Sign Up</UIButton>
       </div>
     </div>
   );
