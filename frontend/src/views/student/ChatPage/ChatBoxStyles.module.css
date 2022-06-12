@@ -88,3 +88,34 @@
 .iconContainer {
   cursor: pointer;
 }
+
+.chatPageContainer {
+  /* display: flex;
+  width: 100%; */
+    width:100%;
+    height:100%;
+    display:inline-grid;
+    grid-template-columns: 30% 70%;
+    grid-template-rows: 1fr;
+    /* column-gap:20px ; */
+
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.chatUserList {
+  /* width: 30%; */
+    overflow-y:auto;
+    max-height:90vh;
+    overflow-x: hidden;
+}
+
+.chatArea {
+    max-height:90vh;
+    overflow-x: hidden;
+    overflow-y:auto;
+}
+
+.chatBoxContainer {
+  padding-bottom: 20px;
+}
