@@ -30,8 +30,9 @@ import { BsNewspaper } from "react-icons/bs";
 import { Link, useLocation } from "react-router-dom";
 import { CgProfile } from "react-icons/cg";
 import Footer from "./Footer";
+import SideBar from "./Common/SideBar/SideBar";
 
-const drawerWidth = 240;
+const drawerWidth = 120;
 
 function BodyLayout(props) {
   const { window, children, userType } = props;
@@ -113,8 +114,10 @@ function BodyLayout(props) {
             sx={{ width: { sm: drawerWidth }, flexShrink: { sm: 0 } }}
             aria-label="mailbox folders"
           >
-            <Drawer
+            <SideBar />
+            {/* <Drawer
               container={container}
+              anchor={"left"}
               variant="temporary"
               open={mobileOpen}
               onClose={handleDrawerToggle}
@@ -130,8 +133,8 @@ function BodyLayout(props) {
               }}
             >
               {drawer}
-            </Drawer>
-            <Drawer
+            </Drawer> */}
+            {/* <Drawer
               onClick={() => {
                 console.log("Drawer clicked");
                 handleDrawerToggle();
@@ -147,7 +150,7 @@ function BodyLayout(props) {
               open={mobileOpen}
             >
               {drawer}
-            </Drawer>
+            </Drawer> */}
           </Box>
         )}
         <Box
