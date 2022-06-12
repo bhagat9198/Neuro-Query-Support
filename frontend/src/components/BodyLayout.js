@@ -32,7 +32,7 @@ import { CgProfile } from "react-icons/cg";
 import Footer from "./Footer";
 import SideBar from "./Common/SideBar/SideBar";
 
-const drawerWidth = 120;
+const drawerWidth = 240;
 
 function BodyLayout(props) {
   const { window, children, userType } = props;
@@ -114,8 +114,7 @@ function BodyLayout(props) {
             sx={{ width: { sm: drawerWidth }, flexShrink: { sm: 0 } }}
             aria-label="mailbox folders"
           >
-            <SideBar />
-            {/* <Drawer
+            <Drawer
               container={container}
               anchor={"left"}
               variant="temporary"
@@ -133,8 +132,8 @@ function BodyLayout(props) {
               }}
             >
               {drawer}
-            </Drawer> */}
-            {/* <Drawer
+            </Drawer>
+            <Drawer
               onClick={() => {
                 console.log("Drawer clicked");
                 handleDrawerToggle();
@@ -150,7 +149,7 @@ function BodyLayout(props) {
               open={mobileOpen}
             >
               {drawer}
-            </Drawer> */}
+            </Drawer>
           </Box>
         )}
         <Box
@@ -158,7 +157,7 @@ function BodyLayout(props) {
           sx={{
             flexGrow: 1,
             p: 3,
-            width: { sm: `calc(100% - ${drawerWidth}px)` },
+            width: { sm: `calc(100% - ${drawerWidth + 200}px)` },
             padding: "0px",
           }}
         >
