@@ -9,8 +9,9 @@ function QueryPage() {
   return (
     <BodyLayout>
       <QueryHeader />
+      <QueryForm />
 
-      <div className={styles.wrapperDiv}>
+      {/* <div className={styles.wrapperDiv}>
         <div className={styles.QueryList}>
           <QueryCardItem />
           <QueryCardItem />
@@ -29,7 +30,7 @@ function QueryPage() {
             status=""
           />
         </div>
-      </div>
+      </div> */}
     </BodyLayout>
   );
 }
