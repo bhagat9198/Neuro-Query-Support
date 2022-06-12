@@ -1,27 +1,27 @@
 import React from "react";
 import styles from "./QueryCardItem.module.css";
-function QueryCardItem(props) {
+function QueryCardItem({ title, description, created_at, time, assigned_to, status, category, onClick }) {
   return (
-    <div className={styles.wrapper}>
+    <div className={styles.wrapper} onClick={onClick}>
       <div className={styles.upperContainer}>
-        <p className={styles.titleText}>{props.title}TITLE OF QUERY</p>
+        <p className={styles.titleText}>{title}</p>
         <div
           className={` ${
-            props.status === "open"
+            status === "open"
               ? styles.statusContainerOpen
               : styles.statusContainerClosed
           }`}
         >
-          <span>{"Open"}</span>
+          <span>{status}</span>
         </div>
       </div>
       <div className={styles.lowerContainer}>
         <div>
-          <p className={styles.categoryText}>Category of problem</p>
+          <p className={styles.categoryText}>{category}</p>
         </div>
         <div>
           <p className={styles.dateText}>
-            <span>Date:</span>30/02/21 00:00 AM
+            <span>Date:</span>{created_at} {time}
           </p>
         </div>
       </div>

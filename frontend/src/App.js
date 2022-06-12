@@ -139,13 +139,13 @@ function App() {
         <Suspense fallback={loading}>
           <Routes>
             <Route exact path="/auth" element={<Auth />} />
-            <Route
+            {/* <Route
               exact
               path="/mentor"
               element={<HomeMentor userType={userType} />}
-            />
+            /> */}
             <Route exact path="/query" element={<QueryPage />} />
-            <Route exact path="/query" element={<QueryPage />} />
+            <Route exact path="/mentor" element={<QueryPage />} />
             <Route exact path="/query/chat" element={<ChatPage />} />
             <Route
               exact

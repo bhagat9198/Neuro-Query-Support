@@ -2,15 +2,26 @@
     display: flex;
     flex-direction: column;
     background: #fff;
-    border: 1px solid #dedede;
+    /* border: 1px solid #dedede; */
     box-sizing: border-box;
-    border-radius: 16px;
+    /* border-radius: 16px; */
     padding: 20px 24px;
     height: 100px;
-    max-width: 98%;
+    /* max-width: 98%; */
     min-height: 96px;
-    margin: 10px 5px;
-    
+    /* margin: 10px 5px; */
+    cursor: pointer;
+}
+.wrapper:hover {
+    background-color: rgba(223, 244, 223, 0.653);
+    /* transition: 0.5s; */
+}
+.wrapper:nth-child(even) {
+    background-color: rgba(201, 237, 213, 0.301);
+}
+.wrapper:nth-child(even):hover {
+    background-color: rgba(201, 237, 213, 0.792);
+    /* transition: 0.5s; */
 }
 .upperContainer{
     display: flex;

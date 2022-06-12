@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./QuerySummary.module.css";
 import UICard from "../Card/UICard";
 import UIButton from "../Buttons/UIButton";
+import { TextField } from "@mui/material";
 function QuerySummary(props) {
+  const [comment, setComment] = useState("")
+  console.log(comment)
   return (
     <div className={styles.wrapper}>
       <div className={styles.titleSection}>
@@ -27,29 +30,32 @@ function QuerySummary(props) {
         <div className={styles.detailsSection}>
           <div>
             <p className={styles.lightText}>Created at:</p>
-            <span>02/09/2021, 2:54 AM</span>
+            <span>{props.created_at}, {props.time}</span>
           </div>
           <div>
             <p className={styles.lightText}>Assigned to:</p>
-            <span>Atul Singh</span>
+            <span>{props.assigned_to}</span>
           </div>
         </div>
         <div className={styles.description}>
           <p className={styles.lightText}>Description:</p>
           <p style={{ margin: 0, marginBottom: "2rem" }}>
             {props.description}
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry's standard dummy text
-            ever since the 1500s, when an unknown printer took a galley of type
-            and scrambled it to make a type specimen book. It has survived not
-            only five centuries, but also the leap into electronic typesetting,
-            remaining essentially unchanged. It was popularised in the 1960s
-            with the release of Letraset sheets containing Lorem Ipsum passages,
-            and more recently with desktop publishing software like Aldus
-            PageMaker including versions of Lorem Ipsum.
           </p>
         </div>
-        <UIButton variant="primary">Go To Query</UIButton>
+        {/* <UIButton variant="primary">Go To Query</UIButton> */}
+        <div style={{width: "100%"}}>
+        <TextField
+        sx={{width: "100%", mb: 2}}
+          id="standard-multiline-static"
+          label="Leave a reply"
+          variant="standard"
+          multiline
+          rows={4}
+          onChange={(e) => setComment(e.target.value)}
+        />
+        <UIButton type="Primary">Add comment</UIButton>
+        </div>
       </div>
     </div>
   );
