@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Modal } from "@mui/material";
 import BodyLayout from "../../../components/BodyLayout";
 import QueryCardItem from "../../../components/Common/QueryCard/QueryCardItem";
 import QueryForm from "../../../components/Common/QueryForm/QueryForm";
@@ -58,9 +59,19 @@ function QueryPage() {
     }
   ]
   const [queryValue, setQueryValue] = useState(query_data[0])
+  const [showModal, setShowModal] = React.useState(false);
+
   return (
     <BodyLayout>
-      <QueryHeader />
+      <QueryHeader setModal={setShowModal} />
+      {/* <QueryForm /> */}
+      <Modal
+        sx={{ mt: 5 }}
+        open={showModal}
+        onClose={() => setShowModal(false)}
+      >
+        <QueryForm setModal={setShowModal} />
+      </Modal>
 
       <div className={styles.wrapperDiv}>
         <div className={styles.QueryList}>

@@ -3,8 +3,7 @@ import UIButton from "../Buttons/UIButton";
 import styles from "./QueryHeader.module.css";
 import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutline";
 import QueryForm from "../QueryForm/QueryForm";
-function QueryHeader() {
-  const [modal, setmodal] = useState(false);
+function QueryHeader(props) {
   return (
     <div className={styles.headerContainer}>
       <div className={styles.row}>
@@ -13,7 +12,7 @@ function QueryHeader() {
         <UIButton
           onClick={() => {
             console.log("clicked");
-            setmodal((prev) => !prev);
+            props.setModal(true);
           }}
         >
           <AddCircleOutlineIcon />
