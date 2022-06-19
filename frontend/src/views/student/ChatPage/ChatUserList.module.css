@@ -1,0 +1,69 @@
+.avatar {
+  height: 50px;
+  width: 50px;
+  background-color: gray;
+  border-radius: 50%;
+  margin: 0 15px;
+}
+.mainwrapper {
+  /* width: 36%; */
+  /* width: fit-content; */
+  max-width: -webkit-fill-available;
+}
+
+.mainwrapper:hover{
+  background-color: rgb(226, 243, 243);
+  cursor: pointer;
+}
+.wrapper {
+  display: flex;
+  padding: 10px 0;
+  border-bottom: 1px solid #c9c4c4;
+  width: 100%;
+}
+
+.avatarContainer {
+  width: 80px;
+}
+
+.textWrapper {
+  align-self: center;
+  width: inherit;
+}
+.name {
+  font-weight: 600;
+}
+.time {
+  font-size: 11px;
+  padding-top: 6px;
+}
+.nametime {
+  display: flex;
+  justify-content: space-between;
+}
+.messagecount {
+}
+.message {
+  font-size: 13px;
+  font-weight: 400px;
+}
+
+.msg {
+    height: 20px;
+    width: 20px;
+    background-color: #5da3b387;
+    border-radius: 50%;
+    margin: 0px 6px;
+    font-size: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.timeNotificationWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 30px;
+  margin-right: 5px;
+}

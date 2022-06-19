@@ -1,0 +1,50 @@
+.cardContainer{
+    border: 2px solid #dedede;
+    border-radius: 10px;
+    min-width: 50%;
+    min-height:55vh;
+    max-height:65vh ;
+    width:768px;
+    overflow-y:auto;
+    margin: auto;
+    background-color:white;
+    box-shadow: 0 1px 10px rgb(0 0 0 / 10%);
+    padding-bottom: 2rem;
+   
+    
+}
+
+.topicSection{
+    display:flex;
+    flex-direction: column;
+    width: 360px;
+    
+}
+
+.innerDiv{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  
+   
+}
+.heading{
+  
+}
+.topic{
+    margin-bottom: 15px;
+    font-size: 2rem;
+    
+    color: #33028a;
+    
+}
+.summarySection{
+    width: 360px;
+    margin-bottom: 2rem;
+}
+.backDrop{
+    height:100vh;
+    width:Calc(100vw-240px) ;
+
+}
